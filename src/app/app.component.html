@@ -1,25 +1,6 @@
-<h3>
-  Angular 2 Seed
-</h3>
-<nav>
-	<a [routerLink]="['/']">
-    Home
-  </a>
-  |
-	<a [routerLink]="['/about']">
-    About
-  </a>
-  |
-	<a [routerLink]="['/github', 'angular']">
-    Github Repos
-  </a>
-</nav>
-
-<main>
-	<router-outlet></router-outlet>
-</main>
-
-
-<footer>
-  © 2016
-</footer>
+cost: {{cost}}
+<ul>
+  <li class="text" *ngFor="let log of logs | async">
+    {{log.time | date: 'dd/MM/yyyy hh:mm'}} (lat: {{log.point.lat}} , lng: {{log.point.lng}})
+  </li>
+</ul>

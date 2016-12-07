@@ -1,6 +1,18 @@
+<sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="17">
+  <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
+</sebm-google-map>
+<p>
 cost: {{cost}}
-<ul>
-  <li class="text" *ngFor="let log of logs | async">
-    {{log.time | date: 'dd/MM/yyyy hh:mm'}} (lat: {{log.point.lat}} , lng: {{log.point.lng}})
-  </li>
-</ul>
+</p>
+<table>
+  <tr>
+    <th>Time</th>
+    <th>Lat</th>
+    <th>Lng</th>
+  </tr>
+  <tr *ngFor="let log of logs | async">
+    <td>{{log.time | date: 'dd/MM/yyyy hh:mm'}}</td>
+    <td>{{log.point.lat}}</td>
+    <td>{{log.point.lng}}</td>
+  </tr>
+</table>

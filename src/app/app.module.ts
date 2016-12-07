@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { AngularFireModule } from 'angularfire2';
+import { AgmCoreModule } from 'angular2-google-maps/core';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyDn_NMUsa9sVsYm19ApwK2U8juSC1PYLfM',
@@ -21,7 +22,10 @@ export const firebaseConfig = {
     BrowserModule,
     FormsModule,
     HttpModule,
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBcCEdwqJJRmFl8E3__78AoyPMGSVB_M80'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
